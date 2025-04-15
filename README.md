@@ -1,94 +1,63 @@
-# 10x Astro Starter
+# Board Game Collection Manager
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+## Description
+
+Board Game Collection Manager is a web application designed to help board game enthusiasts organize, manage, and analyze their game collections. It offers secure user authentication, comprehensive CRUD operations for game management, and a recommendation engine that suggests new games based on the analysis of collection categories and mechanics. This application addresses the challenges of information overload, prevents duplicate purchases, and supports informed decision-making when expanding a collection.
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+- **Frontend:** Astro 5, React 19, TypeScript 5, Tailwind 4, Shadcn/ui
+- **Backend:** Supabase (leveraging PostgreSQL, built-in authentication, and related services)
+- **AI Integration:** Openrouter.ai for intelligent recommendations and insights
+- **CI/CD & Hosting:** GitHub Actions for CI/CD pipelines and DigitalOcean for hosting
 
-## Prerequisites
+## Getting Started Locally
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/missiollo/10xBGCM.git
+   cd 10xBGCM-main
+   ```
 
-## Getting Started
+2. **Install dependencies:**
+   Ensure you are using the Node version specified in the `.nvmrc` file (22.14.0):
+   ```bash
+   nvm use
+   npm install
+   ```
 
-1. Clone the repository:
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-```
-
-4. Build for production:
-
-```bash
-npm run build
-```
+4. **Access the application:**
+   Open your browser and navigate to `http://localhost:3000`.
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+- **`npm run dev`**: Starts the development server.
+- **`npm run build`**: Builds the project for production.
+- **`npm run preview`**: Serves the production build for preview.
+- **`npm run astro`**: Runs the Astro CLI.
+- **`npm run lint`**: Runs ESLint to analyze the code for issues.
+- **`npm run lint:fix`**: Automatically fixes linting errors where possible.
+- **`npm run format`**: Formats the codebase using Prettier.
 
-## Project Structure
+## Project Scope
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+This project includes the following key functionalities:
 
-## AI Development Support
+- **User Authentication:** Secure registration and login mechanisms.
+- **CRUD Operations for Board Games:** Add, edit, delete, and view games with detailed information such as title, publisher, categories, mechanics, player count, and playing time.
+- **Game Recommendations:** An engine that analyzes the collection and suggests new games based on categories and mechanics.
+- **Search and Filtering:** Advanced options to filter and search through a growing collection of board games.
+- **User Feedback:** Integrated system allowing users to rate and provide feedback on both the application and individual games.
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+## Project Status
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
-
-### Cursor IDE
-
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
-
-### GitHub Copilot
-
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
-
-### Windsurf
-
-The `.windsurfrules` file contains AI configuration for Windsurf.
-
-## Contributing
-
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
+This project is currently in the MVP (Minimum Viable Product) stage. Core features have been implemented, and the project continues to evolve with ongoing improvements to enhance functionality, scalability, and user experience.
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
