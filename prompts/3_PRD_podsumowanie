@@ -1,0 +1,39 @@
+<conversation_summary>
+<decisions>
+1. System umożliwi dodawanie duplikatów gier (różne wydania) z opisem tekstowym dodatkowych metadanych.  
+2. Lokalizacja gier będzie określana przez predefiniowane kategorie („półka”, „regał”, „karton”) z identyfikatorem, dostępne dla wszystkich użytkowników.  
+3. Rozszerzenia gier będą traktowane jako oddzielne wpisy, ale muszą być powiązane z jedną lub wieloma pozycjami gier, nawet jeśli dana gra nie znajduje się jeszcze w kolekcji.  
+4. Interfejs wyszukiwania gier do grania z dzieckiem będzie zawierał opcjonalne filtry: wiek dziecka, poziom trudności, język wydania gry oraz czas trwania rozgrywki, przy czym możliwe będzie zapamiętywanie ustawień.  
+5. Uwierzytelnianie zostanie zrealizowane prostym systemem opartym na loginie/emaile i haśle.  
+6. Wstępna wersja systemu rekomendacji będzie oparta na prostych regułach, przy czym architektura zostanie zaprojektowana modułowo, umożliwiając przyszłą rozbudowę.  
+7. Formularz oceny satysfakcji (system gwiazdek i komentarzy) będzie wyświetlany po osiągnięciu określonych progów (zarówno liczby sesji/logowań, jak i rozbudowy kolekcji) z uwzględnieniem odstępów czasowych; użytkownik nie będzie miał możliwości edycji oceny, a administrator będzie miał dostęp do historii ocen.  
+8. Monitorowanie aktywności użytkowników będzie polegać na rejestrowaniu liczby logowań oraz interakcji z aplikacją.  
+9. Dokumentacja ryzyk będzie uproszczona, zawierająca ocenę wpływu oraz prawdopodobieństwa wystąpienia zagrożeń.  
+10. Termin realizacji projektu to 16 maja, z możliwością wcześniejszego oddania i regularnymi przeglądami postępów.
+</decisions>
+
+<matched_recommendations>
+1. Wdrożyć mechanizm rozróżniania duplikatów gier z unikalnymi metadanymi i możliwością rozszerzenia opisu.  
+2. Rozszerzyć system lokalizacji o predefiniowane opcje oraz umożliwić dodawanie własnych kategorii przez użytkowników.  
+3. Zaprojektować system powiązań rozszerzeń gier z istniejącymi lub potencjalnymi wpisami w kolekcji.  
+4. Opracować elastyczny interfejs wyszukiwania gier do grania z dzieckiem z opcjonalnymi filtrami i możliwością zapamiętywania ustawień.  
+5. Implementować prosty system uwierzytelniania oparty na loginie/emailu i haśle.  
+6. Przyjąć modułową architekturę systemu rekomendacji, umożliwiającą przyszłą rozbudowę reguł.  
+7. Skonfigurować formularz oceny satysfakcji wyzwalany po określonych progach z ustalonymi odstępami czasowymi, bez możliwości edycji przez użytkownika.  
+8. Monitorować aktywność użytkowników poprzez analizę logowań i interakcji.  
+9. Przygotować uproszczoną dokumentację ryzyk, zawierającą ocenę wpływu i prawdopodobieństwa zagrożeń.  
+10. Ustalić harmonogram projektu z regularnymi przeglądami postępów, z terminem oddania do 16 maja i możliwością wcześniejszego wdrożenia.
+</matched_recommendations>
+
+<prd_planning_summary>
+Główne wymagania funkcjonalne produktu obejmują prosty system uwierzytelniania, operacje CRUD na kolekcji gier, możliwość rejestrowania duplikatów gier (różne wydania) z opisem tekstowym, zarządzanie lokalizacją gier przy użyciu predefiniowanych kategorii, mechanizm powiązań rozszerzeń gier oraz elastyczny interfejs wyszukiwania, dedykowany filtrom dla gier do grania z dzieckiem. Dodatkowo, system ma zawierać moduł oceny satysfakcji użytkownika oraz monitorowania aktywności (logowania, interakcje).  
+Kluczowe historie użytkownika obejmują dodawanie gier (w tym ich duplikatów i rozszerzeń), wyszukiwanie gier wg określonych kryteriów (w tym dla rozgrywek z dzieckiem), rejestrację i logowanie, a także ocenę aplikacji poprzez formularz satysfakcji.  
+Kryteria sukcesu będą mierzone poprzez liczbę logowań, interakcji z aplikacją, utworzenie kolekcji (minimum 10 gier przez 5 użytkowników) oraz pozytywne oceny satysfakcji.  
+Planowanie obejmuje również moduł monitorowania i dokumentacji ryzyk oraz ustalenie harmonogramu z regularnymi przeglądami, umożliwiającymi terminowe oddanie projektu przed lub na dzień 16 maja.
+</prd_planning_summary>
+
+<unresolved_issues>
+1. Szczegółowe wskaźniki interakcji użytkowników (poza logowaniem) wymagają dalszej analizy.
+</unresolved_issues>
+</conversation_summary>
+
