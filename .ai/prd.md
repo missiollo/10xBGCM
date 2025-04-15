@@ -23,10 +23,10 @@ Aplikacja musi zawierać następujące kluczowe funkcjonalności:
    - Bezpieczny dostęp tylko dla zweryfikowanych użytkowników.
 2. Operacje CRUD na kolekcji gier:
    - Dodawanie gry z informacjami: tytuł, wydawca, kategorie, mechaniki, liczba graczy, czas rozgrywki.
-   - Edycja i usuwanie istniejących wpisów.
-3. Obsługa duplikatów i rozszerzeń:
+   - Edycja i usuwanie istniejących wpisów. 
+3. Obsługa duplikatów i rozszerzeń: [do usuniecia]
    - Dodawanie gier o tym samym tytule w różnych wydaniach lub jako rozszerzenia z dodatkowymi metadanymi.
-4. Zarządzanie lokalizacją gier:
+4. Zarządzanie lokalizacją gier: [do usuniecia]
    - Predefiniowane kategorie lokalizacji (np. "półka", "regał", "karton") oraz możliwość dodawania własnych kategorii.
 5. Interfejs wyszukiwania:
    - Wyszukiwanie gier według tytułu i atrybutów, z dodatkowymi filtrami (np. gry do grania z dzieckiem, kryteria wiekowe, poziom trudności, język wydania, czas rozgrywki).
