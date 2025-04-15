@@ -16,7 +16,7 @@ Board Game Collection Manager is a web application designed to help board game e
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/missiollo/10xBGCM.git
-   cd 10xBGCM-main
+   cd 10xBGCM
    ```
 
 2. **Install dependencies:**
