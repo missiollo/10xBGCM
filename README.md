@@ -56,7 +56,7 @@ This project includes the following key functionalities:
 
 ## Project Status
 
-This project is currently in the MVP (Minimum Viable Product) stage. Core features have been implemented, and the project continues to evolve with ongoing improvements to enhance functionality, scalability, and user experience.
+This project is currently under development.
 
 ## License
 
