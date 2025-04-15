@@ -3,9 +3,9 @@ description:
 globs: 
 alwaysApply: true
 ---
-# AI Rules for {app-name}
+# AI Rules for Board Game Collection Manager (MVP)
 
-{project-description}
+Board Game Collection Manager is a web application that helps board game enthusiasts organize and manage their growing collections, solving the challenge of tracking owned titles and making informed purchasing decisions. The MVP includes user authentication, complete CRUD operations for game management, and a recommendation engine that suggests new games based on analysis of existing collection categories and mechanics. This solution eliminates information chaos, prevents accidental duplicate purchases, and supports the decision-making process when selecting new games through intelligent recommendations.
 
 ## Tech Stack
 
