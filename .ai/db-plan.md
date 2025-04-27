@@ -3,7 +3,7 @@
 # 1. Lista Tabel
 
 ## users
-- id: SERIAL PRIMARY KEY
+- id: UUID PRIMARY KEY
 - email: VARCHAR(254) NOT NULL UNIQUE
 - username: VARCHAR(254) NOT NULL UNIQUE
 - password_hash: TEXT NOT NULL
@@ -48,7 +48,7 @@ PRIMARY KEY (game_id, mechanic_id)
 ## collections
 -- Reprezentuje zbiór gier użytkownika (relacja many-to-many między users a games)
 - id: SERIAL PRIMARY KEY
-- user_id: INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+- user_id: UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE
 - game_id: INTEGER NOT NULL REFERENCES games(id) ON DELETE CASCADE
 - added_at: TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 
@@ -63,15 +63,28 @@ ALTER TABLE collections ADD CONSTRAINT uq_user_game UNIQUE (user_id, game_id);
 - record_id: INTEGER NOT NULL
 - changed_data: JSONB  -- zapis zmian jako migawka danych
 - changed_at: TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
-- user_id: INTEGER REFERENCES users(id)
+- user_id: UUID REFERENCES users(id)
 
 ## recommendations
 -- Tabela rekomendacji gier
 - id: SERIAL PRIMARY KEY
-- user_id: INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+- user_id: UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE
 - input_data: JSONB NOT NULL  -- dane wejściowe dla algorytmu rekomendacji
 - recommendation: VARCHAR(254)  -- część rekomendacji lub podsumowanie
 - created_at: TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+## game_ratings
+-- Tabela ocen gier (US-008)
+- id: SERIAL PRIMARY KEY
+- user_id: UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE
+- game_id: INTEGER NOT NULL REFERENCES games(id) ON DELETE CASCADE
+- rating: SMALLINT NOT NULL CHECK (rating >= 1 AND rating <= 5)
+- comment: TEXT
+- created_at: TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+- updated_at: TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+-- Unikalność pary user_id i game_id, aby każdy użytkownik mógł ocenić grę tylko raz
+ALTER TABLE game_ratings ADD CONSTRAINT uq_user_game_rating UNIQUE (user_id, game_id);
 
 # 2. Relacje między tabelami
 - Relacja many-to-many między games a categories poprzez tabelę game_categories.
@@ -89,7 +102,7 @@ ALTER TABLE collections ADD CONSTRAINT uq_user_game UNIQUE (user_id, game_id);
 -- Rekomenduje się włączenie RLS na tabelach: collections, recommendations, game_categories, game_mechanics, aby zapewnić, że użytkownicy mają dostęp tylko do swoich danych.
 -- Polityki RLS należy skonfigurować osobno przy wdrożeniu migracji, przykładowo:
 -- ALTER TABLE collections ENABLE ROW LEVEL SECURITY;
--- CREATE POLICY user_isolation ON collections USING (user_id = current_setting('app.current_user_id')::INTEGER);
+-- CREATE POLICY user_isolation ON collections USING (user_id = auth.uid());
 
 # 5. Dodatkowe uwagi
 - Schemat został zaprojektowany zgodnie z zasadami 3NF, z możliwością dalszej normalizacji lub denormalizacji w przyszłości.
