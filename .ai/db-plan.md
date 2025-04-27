@@ -95,4 +95,4 @@ ALTER TABLE collections ADD CONSTRAINT uq_user_game UNIQUE (user_id, game_id);
 - Schemat został zaprojektowany zgodnie z zasadami 3NF, z możliwością dalszej normalizacji lub denormalizacji w przyszłości.
 - Struktura umożliwia przyszłą rozbudowę, np. wdrożenie wielu kolekcji dla jednego użytkownika.
 - Audyt operacji na krytycznych danych zapewnia kontrolę nad zmianami w bazie.
-- Indeksy oraz ograniczenia poprawiają wydajność i integralność danych. 
+- Indeksy oraz ograniczenia poprawiają wydajność i integralność danych. ű
