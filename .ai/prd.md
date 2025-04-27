@@ -28,6 +28,7 @@ Aplikacja musi zawierać następujące kluczowe funkcjonalności:
    - Wyszukiwanie gier według tytułu i atrybutów, z dodatkowymi filtrami (np. gry do grania z dzieckiem, kryteria wiekowe, poziom trudności, język wydania, czas rozgrywki).
 4. Moduł rekomendacji [do analizy]:
    - Prosty algorytm rekomendacji oparty na analizie ocen gier w kolekcji gracza, kategorii gry oraz mechanik.
+   - Rekomendacja może być wykonana za pomocą AI, przez zadanie zapytania do odpowiedniego API i zwrócenie odpowiedzi.
 5. Formularz oceny gier:
    - System oceny w formie gwiazdek i komentarzy dotyczących gier w kolekcji.
 
@@ -94,7 +95,7 @@ Kryteria akceptacji:
 
 US-007
 Tytuł: Otrzymywanie rekomendacji gier
-Opis: System generuje rekomendacje na podstawie analizy ocen gier w kolekcji gracza, kategorii gry oraz mechanik.
+Opis: System generuje rekomendacje przy użyciu sztucznej inteligencji, wysyłając zapytanie do odpowiedniego API, na podstawie analizy ocen gier w kolekcji gracza, kategorii gry oraz mechanik.
 Kryteria akceptacji:
 - Rekomendacje pojawiają się po osiągnięciu minimum 10 gier w kolekcji.
 - Użytkownik otrzymuje przynajmniej 5 sensownych rekomendacji.
