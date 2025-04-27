@@ -172,6 +172,51 @@ export interface Database {
           },
         ];
       };
+      game_ratings: {
+        Row: {
+          comment: string | null;
+          created_at: string;
+          game_id: number;
+          id: number;
+          rating: number;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          comment?: string | null;
+          created_at?: string;
+          game_id: number;
+          id?: number;
+          rating: number;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          comment?: string | null;
+          created_at?: string;
+          game_id?: number;
+          id?: number;
+          rating?: number;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "game_ratings_game_id_fkey";
+            columns: ["game_id"];
+            isOneToOne: false;
+            referencedRelation: "games";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "game_ratings_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       games: {
         Row: {
           created_at: string;
@@ -296,9 +341,7 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database;
-  }
+  TableName extends DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
     ? keyof (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
     : never = never,
@@ -319,9 +362,7 @@ export type Tables<
 
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"] | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database;
-  }
+  TableName extends DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
     ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
@@ -340,9 +381,7 @@ export type TablesInsert<
 
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"] | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database;
-  }
+  TableName extends DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
     ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
@@ -361,9 +400,7 @@ export type TablesUpdate<
 
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"] | { schema: keyof Database },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof Database;
-  }
+  EnumName extends DefaultSchemaEnumNameOrOptions extends { schema: keyof Database }
     ? keyof Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
     : never = never,
 > = DefaultSchemaEnumNameOrOptions extends { schema: keyof Database }
@@ -374,9 +411,7 @@ export type Enums<
 
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"] | { schema: keyof Database },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof Database;
-  }
+  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
     ? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
     : never = never,
 > = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
