@@ -4,6 +4,15 @@ export const logger = {
       // TODO: Add production logging service integration
       return;
     }
-    console.error(message, error);
+    console.error(message);
+    if (error instanceof Error) {
+      console.error("Error details:", {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+      });
+    } else {
+      console.error("Unknown error:", error);
+    }
   },
 };
