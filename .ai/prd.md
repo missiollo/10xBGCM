@@ -65,7 +65,7 @@ US-003
 Tytuł: Dodawanie gry do kolekcji
 Opis: Użytkownik dodaje nową grę, podając wszystkie wymagane informacje.
 Kryteria akceptacji:
-- Formularz umożliwia wprowadzenie danych: tytuł, wydawca, kategorie, mechaniki, liczba graczy, czas rozgrywki.
+- Formularz umożliwia wprowadzenie danych: tytuł,  minimalna i maksymalna liczba graczy, czas rozgrywki, a opcjonalnie również kategorie, mechaniki oraz wydawce.
 - Walidacja danych w czasie rzeczywistym.
 - Potwierdzenie udanej operacji dodania gry.
 
@@ -73,7 +73,7 @@ US-004
 Tytuł: Edycja informacji o grze
 Opis: Użytkownik modyfikuje dane dotyczące gry już dodanej do kolekcji.
 Kryteria akceptacji:
-- Formularz edycji umożliwia modyfikację wszystkich kluczowych danych.
+- Formularz edycji umożliwia modyfikację kluczowych danych, takze opcjonalnych.
 - Zmiany są zatwierdzane i zapisywane po walidacji.
 - Użytkownik otrzymuje potwierdzenie o udanej edycji.
 
